@@ -31,6 +31,7 @@ body {
 
 body {
 	background-color: var(--color-background);
+	background-image: url("/images/pattern-background-desktop-light.svg");
 	color: var(--color-text);
 }
 
@@ -42,5 +43,46 @@ a {
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
+	}
+}
+
+body {
+	background-repeat: no-repeat;
+	background-size: fit;
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		background-image: url("/images/pattern-background-desktop-light.svg");
+	}
+}
+
+@media (prefers-color-scheme: light) and (max-width: 768px) {
+	body {
+		background-image: url("/images/pattern-background-tablet-light.svg");
+	}
+}
+
+@media (prefers-color-scheme: light) and (max-width: 375px) {
+	body {
+		background-image: url("/images/pattern-background-mobile-light.svg");
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-image: url("/images/pattern-background-desktop-dark.svg");
+	}
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+	body {
+		background-image: url("/images/pattern-background-tablet-dark.svg");
+	}
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 375px) {
+	body {
+		background-image: url("/images/pattern-background-mobile-dark.svg");
 	}
 }
