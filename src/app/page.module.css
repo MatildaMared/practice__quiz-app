@@ -1,8 +1,15 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.heading {
+	font-weight: 300;
+	font-size: 2.5rem;
+}
+
+.heading > span {
+	font-weight: 700;
 }
