@@ -8,6 +8,7 @@
 	--color-background: rgba(244, 246, 250);
 	--color-background-secondary: rgba(255, 255, 255);
 	--color-text: rgba(49, 62, 81);
+	--color-text-secondary: rgba(98, 108, 127);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +17,7 @@
 		--color-background: rgba(49, 62, 81);
 		--color-background-secondary: rgba(59, 77, 102);
 		--color-text: rgba(255, 255, 255);
+		--color-text-secondary: rgba(171, 193, 225);
 	}
 }
 
