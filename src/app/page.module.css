@@ -1,8 +1,8 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	gap: 1rem;
+  padding: 2rem 1rem;
 }
 
 .heading {
@@ -12,4 +12,40 @@
 
 .heading > span {
 	font-weight: 700;
+}
+
+.description {
+	font-style: italic;
+	font-weight: 300;
+}
+
+.quizzes {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quiz {
+	background-color: var(--color-background-secondary);
+	width: 100%;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	border-radius: 0.5rem;
+}
+
+.quiz > h2 {
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.25rem;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 0.25rem;
 }

@@ -9,12 +9,21 @@ export default async function Home() {
 			<h1 className={styles.heading}>
 				Welcome to the <span>Frontend Quiz!</span>
 			</h1>
-			<p>Pick a subject to get started</p>
-			<section>
+			<p className={styles.description}>Pick a subject to get started.</p>
+			<section className={styles.quizzes}>
 				{quizzes.map((quiz) => (
-					<Link key={quiz.title} href={`/quiz/${quiz.title}`}>
-						<Image src={quiz.icon} alt={quiz.title} width={40} height={40} />
-						<h2>{quiz.title}</h2>
+					<Link href={`/quiz/${quiz.title}`} key={quiz.title}>
+						<div className={styles.quiz}>
+							<span className={styles.icon}>
+								<Image
+									src={quiz.icon}
+									alt={quiz.title}
+									width={30}
+									height={30}
+								/>
+							</span>
+							<h2>{quiz.title}</h2>
+						</div>
 					</Link>
 				))}
 			</section>
