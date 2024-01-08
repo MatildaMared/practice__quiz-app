@@ -6,10 +6,12 @@ import Link from "next/link";
 export default async function Home() {
 	return (
 		<main className={styles.main}>
-			<h1 className={styles.heading}>
-				Welcome to the <span>Frontend Quiz!</span>
-			</h1>
-			<p className={styles.description}>Pick a subject to get started.</p>
+			<header className={styles.header}>
+				<h1 className={styles.heading}>
+					Welcome to the <span>Frontend Quiz!</span>
+				</h1>
+				<p className={styles.description}>Pick a subject to get started.</p>
+			</header>
 			<section className={styles.quizzes}>
 				{quizzes.map((quiz) => (
 					<Link href={`/quiz/${quiz.title}`} key={quiz.title}>
