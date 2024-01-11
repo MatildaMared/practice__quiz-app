@@ -38,6 +38,10 @@ body {
 	background-image: url("/images/pattern-background-desktop-light.svg");
 	color: var(--color-text);
 	padding: 1rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 1px solid red;
+	min-height: 100vh;
 }
 
 a {
@@ -51,11 +55,6 @@ a {
 	}
 }
 
-body {
-	background-repeat: no-repeat;
-	background-size: fit;
-}
-
 @media (prefers-color-scheme: light) {
 	body {
 		background-image: url("/images/pattern-background-desktop-light.svg");
@@ -65,6 +64,7 @@ body {
 @media (prefers-color-scheme: light) and (max-width: 768px) {
 	body {
 		background-image: url("/images/pattern-background-tablet-light.svg");
+		background-size: contain;
 	}
 }
 
@@ -83,6 +83,7 @@ body {
 @media (prefers-color-scheme: dark) and (max-width: 768px) {
 	body {
 		background-image: url("/images/pattern-background-tablet-dark.svg");
+		background-size: contain;
 	}
 }
 
