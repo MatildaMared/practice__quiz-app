@@ -1,9 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { quizzes } from "@/data.json";
 import Link from "next/link";
+import { getAllQuizzes } from "@/utils/quiz";
 
 export default async function Home() {
+	const quizzes = getAllQuizzes();
+
 	return (
 		<main className={styles.main}>
 			<header className={styles.header}>
@@ -14,7 +16,7 @@ export default async function Home() {
 			</header>
 			<section className={styles.quizzes}>
 				{quizzes.map((quiz) => (
-					<Link href={`/quiz/${quiz.title}`} key={quiz.title}>
+					<Link href={`/quiz/${quiz.id}`} key={quiz.title}>
 						<div className={styles.quiz}>
 							<span className={styles.icon}>
 								<Image
