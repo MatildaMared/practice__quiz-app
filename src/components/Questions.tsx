@@ -9,7 +9,19 @@ interface Props {
 function Questions({ quiz }: Props) {
 	const [currentQuestion, setCurrentQuestion] = React.useState(0);
 
-	return <div>Questions</div>;
+	return (
+		<div>
+			<h2>{quiz.questions[currentQuestion].question}</h2>
+			<ul>
+				{/* TODO: Continue here */}
+				{quiz.questions[currentQuestion].options.map((answer) => (
+					<li key={answer}>
+						<button>{answer}</button>
+					</li>
+				))}
+			</ul>
+		</div>
+	);
 }
 
 export default Questions;
