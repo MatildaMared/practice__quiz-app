@@ -14,7 +14,12 @@ export default function Page({ params }: { params: { id: string } }) {
 	return (
 		<div>
 			<h1>{quiz.title}</h1>
-			<Image src={quiz.icon} alt={quiz.title} width={30} height={30} />
+			<Image
+				src={`./../${quiz.icon}`}
+				alt={quiz.title}
+				width={30}
+				height={30}
+			/>
 			<Questions quiz={quiz} />
 		</div>
 	);
