@@ -1,0 +1,20 @@
+.questions {
+	list-style: none;
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.question {
+	padding: 1rem;
+	background-color: var(--color-background-secondary);
+	border-radius: 0.5rem;
+}
+
+.question button {
+	background: transparent;
+	width: 100%;
+	border: none;
+	cursor: pointer;
+}

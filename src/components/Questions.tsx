@@ -1,6 +1,7 @@
 "use client";
 import { Quiz } from "@/types/Quiz";
 import React from "react";
+import styles from "./questions.module.css";
 
 interface Props {
 	quiz: Quiz;
@@ -29,7 +30,7 @@ function Questions({ quiz }: Props) {
 			},
 		]);
 
-		console.log(answers)
+		console.log(answers);
 
 		if (currentQuestion + 1 < quiz.questions.length) {
 			setCurrentQuestion((prev) => prev + 1);
@@ -41,10 +42,9 @@ function Questions({ quiz }: Props) {
 	return (
 		<div>
 			<h2>{quiz.questions[currentQuestion].question}</h2>
-			<ul>
-				{/* TODO: Continue here */}
+			<ul className={styles.questions}>
 				{quiz.questions[currentQuestion].options.map((answer) => (
-					<li key={answer}>
+					<li key={answer} className={styles.question}>
 						<button onClick={() => handleAnswer(answer)}>{answer}</button>
 					</li>
 				))}
