@@ -40,8 +40,13 @@ function Questions({ quiz }: Props) {
 	};
 
 	return (
-		<div>
-			<h2>{quiz.questions[currentQuestion].question}</h2>
+		<section className={styles.wrapper}>
+			<div className={styles.info}>
+				<p>
+					Question {currentQuestion + 1} of {quiz.questions.length}
+				</p>
+				<h2>{quiz.questions[currentQuestion].question}</h2>
+			</div>
 			<ul className={styles.questions}>
 				{quiz.questions[currentQuestion].options.map((answer) => (
 					<li key={answer} className={styles.question}>
@@ -49,7 +54,7 @@ function Questions({ quiz }: Props) {
 					</li>
 				))}
 			</ul>
-		</div>
+		</section>
 	);
 }
 
