@@ -39,6 +39,8 @@ function Questions({ quiz }: Props) {
 		}
 	};
 
+	const ALPHABET = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.info}>
@@ -48,8 +50,11 @@ function Questions({ quiz }: Props) {
 				<h2>{quiz.questions[currentQuestion].question}</h2>
 			</div>
 			<ul className={styles.questions}>
-				{quiz.questions[currentQuestion].options.map((answer) => (
+				{quiz.questions[currentQuestion].options.map((answer, index) => (
 					<li key={answer} className={styles.question}>
+						<div className={styles.icon}>
+							<span>{ALPHABET[index]}</span>
+						</div>
 						<button onClick={() => handleAnswer(answer)}>{answer}</button>
 					</li>
 				))}
