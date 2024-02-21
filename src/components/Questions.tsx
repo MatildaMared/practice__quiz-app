@@ -16,6 +16,7 @@ interface Answer {
 function Questions({ quiz }: Props) {
 	const [currentQuestion, setCurrentQuestion] = React.useState(0);
 	const [answers, setAnswers] = React.useState<Answer[]>([]);
+	const [selectedAnswer, setSelectedAnswer] = React.useState<string>();
 
 	const handleAnswer = (answer: string) => {
 		const realAnswer = quiz.questions[currentQuestion].answer;
@@ -29,8 +30,6 @@ function Questions({ quiz }: Props) {
 				isCorrect,
 			},
 		]);
-
-		console.log(answers);
 
 		if (currentQuestion + 1 < quiz.questions.length) {
 			setCurrentQuestion((prev) => prev + 1);
@@ -51,11 +50,16 @@ function Questions({ quiz }: Props) {
 			</div>
 			<ul className={styles.questions}>
 				{quiz.questions[currentQuestion].options.map((answer, index) => (
-					<li key={answer} className={styles.question}>
+					<li
+						key={answer}
+						className={`${styles.question} ${
+							selectedAnswer === answer && "selected"
+						}`}
+					>
 						<div className={styles.icon}>
 							<span>{ALPHABET[index]}</span>
 						</div>
-						<button onClick={() => handleAnswer(answer)}>{answer}</button>
+						<button onClick={() => setSelectedAnswer(answer)}>{answer}</button>
 					</li>
 				))}
 			</ul>

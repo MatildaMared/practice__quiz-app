@@ -35,7 +35,12 @@
 	gap: 1rem;
 }
 
-.question:hover {
+.question.selected {
+	border-color: var(--color-accent);
+}
+
+.question:hover,
+.question.selected {
 	border-color: var(--color-accent);
 }
 
