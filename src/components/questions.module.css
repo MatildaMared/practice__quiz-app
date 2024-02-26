@@ -33,6 +33,7 @@
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+	cursor: pointer;
 }
 
 .question.selected {
@@ -40,7 +41,11 @@
 }
 
 .question:hover,
-.question.selected {
+.question:active {
+	border-color: var(--color-accent);
+}
+
+.selected {
 	border-color: var(--color-accent);
 }
 
@@ -48,7 +53,6 @@
 	background: transparent;
 	width: 100%;
 	border: none;
-	cursor: pointer;
 	font-size: 1.125rem;
 }
 

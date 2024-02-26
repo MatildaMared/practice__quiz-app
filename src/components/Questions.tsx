@@ -51,15 +51,16 @@ function Questions({ quiz }: Props) {
 			<ul className={styles.questions}>
 				{quiz.questions[currentQuestion].options.map((answer, index) => (
 					<li
+						onClick={() => setSelectedAnswer(answer)}
 						key={answer}
 						className={`${styles.question} ${
-							selectedAnswer === answer && "selected"
+							selectedAnswer === answer && styles.selected
 						}`}
 					>
 						<div className={styles.icon}>
 							<span>{ALPHABET[index]}</span>
 						</div>
-						<button onClick={() => setSelectedAnswer(answer)}>{answer}</button>
+						<p className={styles.answer}>{answer}</p>
 					</li>
 				))}
 			</ul>
