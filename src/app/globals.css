@@ -3,6 +3,7 @@
 	--color-error: rgba(238, 84, 84);
 	--color-success: rgba(38, 215, 130);
 	--color-accent: rgba(167, 41, 245);
+	--color-accent-light: rgba(211, 148, 250, 1);
 
 	/* Light mode specific variables go here */
 	--color-background: rgba(244, 246, 250);

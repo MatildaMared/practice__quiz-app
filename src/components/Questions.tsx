@@ -30,7 +30,9 @@ function Questions({ quiz }: Props) {
 				isCorrect,
 			},
 		]);
+	};
 
+	const handleNextQuestion = () => {
 		if (currentQuestion + 1 < quiz.questions.length) {
 			setCurrentQuestion((prev) => prev + 1);
 		} else {
@@ -63,6 +65,15 @@ function Questions({ quiz }: Props) {
 						<p className={styles.answer}>{answer}</p>
 					</li>
 				))}
+				<button
+					className={styles.button}
+					onClick={() => handleAnswer(selectedAnswer!)}
+				>
+					Submit
+				</button>
+				<button className={styles.button} onClick={handleNextQuestion}>
+					Next Question
+				</button>
 			</ul>
 		</section>
 	);

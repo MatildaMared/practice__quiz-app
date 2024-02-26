@@ -49,11 +49,20 @@
 	border-color: var(--color-accent);
 }
 
-.question button {
-	background: transparent;
+.button {
+	background: var(--color-accent);
+	font-weight: 600;
 	width: 100%;
 	border: none;
 	font-size: 1.125rem;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.button:hover {
+	background: var(--color-accent-light);
 }
 
 .icon {
