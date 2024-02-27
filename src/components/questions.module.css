@@ -79,3 +79,14 @@
 	font-size: 1.125rem;
 	font-weight: 500;
 }
+
+.iconCorrect {
+	color: rgba(255, 255, 255);
+	background-color: var(--color-success);
+}
+
+.questionCorrect,
+.questionCorrect:hover,
+.questionCorrect:active {
+	border-color: var(--color-success);
+}

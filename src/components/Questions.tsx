@@ -21,6 +21,7 @@ function Questions({ quiz }: Props) {
 	const handleAnswer = (answer: string) => {
 		const realAnswer = quiz.questions[currentQuestion].answer;
 		const isCorrect = realAnswer === answer;
+		console.log("The anser is", isCorrect ? "correct" : "incorrect");
 
 		setAnswers([
 			...answers,
@@ -34,6 +35,7 @@ function Questions({ quiz }: Props) {
 
 	const handleNextQuestion = () => {
 		if (currentQuestion + 1 < quiz.questions.length) {
+			setSelectedAnswer(undefined);
 			setCurrentQuestion((prev) => prev + 1);
 		} else {
 			console.log(answers);
@@ -41,6 +43,23 @@ function Questions({ quiz }: Props) {
 	};
 
 	const ALPHABET = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+	const isAnswerCorrectAndFinal = (question: number, answer: string) => {
+		console.log("Checking", question, answer);
+		const selected = answers.find(
+			(a) => a.question === question && a.answer === answer
+		);
+
+		console.log("Selected", selected);
+
+		if (!selected) {
+			console.log("will return false");
+			return false;
+		}
+
+		console.log("will return", selected.isCorrect);
+		return selected.isCorrect;
+	};
 
 	return (
 		<section className={styles.wrapper}>
@@ -56,7 +75,14 @@ function Questions({ quiz }: Props) {
 						onClick={() => setSelectedAnswer(answer)}
 						key={answer}
 						className={`${styles.question} ${
-							selectedAnswer === answer && styles.selected
+							selectedAnswer === answer
+								? isAnswerCorrectAndFinal(currentQuestion, answer)
+									? styles.questionCorrect
+									: styles.selected
+								: ""
+						} ${
+							isAnswerCorrectAndFinal(currentQuestion, answer) &&
+							styles.questionCorrect
 						}`}
 					>
 						<div className={styles.icon}>
